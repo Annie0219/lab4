@@ -1,0 +1,101 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<main class="container add-user-section">
+<div class="section-content">
+    <div class="form-style-8">
+    <h2>Create a new user</h2>
+
+    <form method="POST" action="/add-user">
+        {{ form.hidden_tag() }}
+
+        <div class="form-group">
+            {{ form.username.label }}
+
+            {% if form.username.errors %}
+                {% for error in form.username.errors %}
+                <p class-"error-message">{{ error }}</p>
+                {% endfor %}
+            {% endif %}
+
+            {{ form.username }}
+        </div>
+
+        <div class="form-group">
+            {{ form.first_name.label }}
+
+            {% if form.first_name.errors %}
+                {% for error in form.first_name.errors %}
+                <p class-"error-message">{{ error }}</p>
+                {% endfor %}
+            {% endif %}
+
+            {{ form.first_name(class="form-control") }}
+        </div>
+
+        <div class="form-group">
+            {{ form.last_name.label }}
+
+            {% if form.last_name.errors %}
+                {% for error in form.last_name.errors %}
+                <p class-"error-message">{{ error }}</p>
+                {% endfor %}
+            {% endif %}
+
+            {{ form.last_name(class="form-control") }}
+        </div>
+
+        <div class="form-group">
+            {{ form.prog_lang.label }}
+
+            {% if form.prog_lang.errors %}
+                {% for error in form.prog_lang.errors %}
+                <p class="error-message">{{ error }}</p>
+                {% endfor %}
+            {% endif %}
+
+            {{ form.prog_lang(class="form-control") }}
+        </div>
+
+        <div class="form-group">
+            {{ form.experience_yr.label }}
+
+            {% if form.experience_yr.errors %}
+                {% for error in form.experience_yr.errors %}
+                <p class="error-message">{{ error }}</p>
+                {% endfor %}
+            {% endif %}
+
+            {{ form.experience_yr(class="form-control") }}
+        </div>
+
+        <div class="form-group">
+            {{ form.age.label }}
+
+            {% if form.age.errors %}
+                {% for error in form.age.errors %}
+                <p class="error-message">{{ error }}</p>
+                {% endfor %}
+            {% endif %}
+
+            {{ form.age(class="form-control") }}
+        </div>
+
+        <div class="form-group">
+            {{ form.hw1_hrs.label }}
+
+            {% if form.hw1_hrs.errors %}
+                {% for error in form.hw1_hrs.errors %}
+                <p class="error-message">{{ error }}</p>
+                {% endfor %}
+            {% endif %}
+
+            {{ form.hw1_hrs(class="form-control") }}
+        </div>
+
+        {{ form.submit(class="btn btn-primary btn-xl")}}
+    </form>
+</div>
+</div>
+</main>
+{% endblock %}
